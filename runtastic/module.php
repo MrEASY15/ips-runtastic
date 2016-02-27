@@ -148,8 +148,8 @@
 		 * @return Runtastic
 		 */
 
-/**		 
-		 private function setUsername($loginUsername)
+		 
+		private function setUsername($loginUsername)
 		{
 			$this->loginUsername = $loginUsername;
 
@@ -163,8 +163,8 @@
 		 * @return Runtastic
 		 */
 
-/**
-     	private function setPassword($loginPassword)
+
+	     	private function setPassword($loginPassword)
 		{
 			$this->loginPassword = $loginPassword;
 
