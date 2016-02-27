@@ -1,12 +1,9 @@
 {
 	"elements":
 	[
-		{ "type": "ValidationTextBox", "name": "User", "caption": "Benuter (eMail)" },
-		{ "type": "PasswordTextBox", "name": "Password", "caption": "Passwort" }
+		{ "type": "ValidationTextBox", "name": "usr", "caption": "Benuter (eMail)" },
+		{ "type": "PasswordTextBox", "name": "pwd", "caption": "Passwort" }
 		
 	],
-	"actions":
-	[
-		{ "type": "Button", "label": "Update", "onClick": "UWZ_RequestInfo($id);" }
-	]	
+	
 }
