@@ -136,6 +136,13 @@
 			$runtastic->setUsername($this->loginUsername)->setPassword($this->loginPassword);
 			$runtastic->login();
 			
+			$activities = $runtastic->getActivities();
+			echo "Gesamt: " . count($activities) . PHP_EOL;
+		
+			echo "<pre>";
+			var_dump($activities[0]);
+			echo "</pre>";
+
 			echo "Horst";
 
 		}
