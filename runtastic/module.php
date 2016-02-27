@@ -133,8 +133,10 @@
 		
 			$runtastic = new Runtastic();
 
-			$runtastic->setUsername('ich@goetzuli.com')->setPassword('Semmel15');
-			$runtastic->login();			
+			$runtastic->setUsername($this->loginUsername)->setPassword($this->loginPassword);
+			$runtastic->login();
+			
+			echo "Horst";
 
 		}
 		
