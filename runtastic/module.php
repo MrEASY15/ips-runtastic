@@ -2,7 +2,7 @@
 	require_once 'Runtastic.php';
 	require_once 'RuntasticActivityList.php';
 	
-	use Runtastic\Runtastic;
+//	use Runtastic\Runtastic;
 
 	class Runtastic extends IPSModule
 	{
