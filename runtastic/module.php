@@ -83,10 +83,10 @@
 		public function RequestInfo()
 		{
 			
-			require_once './Runtastic.php';
-			require_once './RuntasticActivityList.php';
+			require_once 'Runtastic.php';
+			require_once 'RuntasticActivityList.php';
 	
-			//use Runtastic\Runtastic;
+			use Runtastic\Runtastic;
         		
 			$runtastic = new Runtastic();
 
