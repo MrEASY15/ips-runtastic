@@ -1,0 +1,12 @@
+{
+	"elements":
+	[
+		{ "type": "ValidationTextBox", "name": "Benuter (eMail)", "caption": "User" }
+		{ "type": "PasswordTextBox", "name": "Password", "caption": "Passwort" }
+		
+	],
+	"actions":
+	[
+		{ "type": "Button", "label": "Update", "onClick": "" }
+	]	
+}
