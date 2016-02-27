@@ -133,7 +133,12 @@
 			$this->loginPassword = $this->ReadPropertyString("pwd"); 
 			SetValue($this->GetIDForIdent("usr_test"), $this->loginUsername);
 //			SetValue($this->GetIDForIdent("RainValue"), $regenmenge);
-			
+		
+			$runtastic = new Runtastic();
+
+			$runtastic->setUsername('ich@goetzuli.com')->setPassword('Semmel15');
+			$runtastic->login();			
+
 		}
 		
 		/**
