@@ -415,7 +415,8 @@
 				$response = $this->post(self::RUNTASTIC_SESSIONS_URL, $postData);
 			}
 
-			return new RuntasticActivityList($response);
+			//return new RuntasticActivityList($response);
+			return $response;
 		}
 
 		/**
@@ -547,124 +548,5 @@
 		}
 	
 	}
-/// ----------------------------------------
-class RuntasticActivityList implements \ArrayAccess, \Countable
-{
-    /**
-     * RuntasticActivityList constructor.
-     *
-     * @param array $items
-     */
-    public function __construct(array $items = [])
-    {
-        $this->_set($items);
-    }
 
-    /**
-     * @param string $aFilter
-     */
-    public function filterBy($aFilter)
-    {
-        $tmp = [];
-
-        foreach ($this as $oActivity) {
-            $blKeep = false;
-
-            foreach ($aFilter as $key => $val) {
-                if ($oActivity->$key == $val) {
-                    $blKeep = true;
-                } else {
-                    $blKeep = false;
-                    break;
-                }
-            }
-
-            if ($blKeep) {
-                $tmp[] = $oActivity;
-            }
-        }
-
-        $this->_set($tmp, true);
-    }
-
-    /**
-     * @param  array $data
-     * @param  bool  $blClean
-     * @return RuntasticActivityList
-     */
-    private function _set($data, $blClean = false)
-    {
-        if ($blClean) {
-            $this->_reset();
-        }
-
-        foreach ($data AS $key => $value) {
-            $this->$key = $value;
-        }
-
-        return $this;
-    }
-
-    private function _reset()
-    {
-        foreach ($this as $key => $val) {
-            unset($this->$key);
-        }
-    }
-
-    /**
-     * @param  mixed $offset
-     * @return bool
-     */
-    public function offsetExists($offset)
-    {
-        if (isset($this->$offset)) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * @param  mixed $offset
-     * @return bool
-     */
-    public function offsetGet($offset)
-    {
-        if (isset($this->$offset)) {
-            return $this->$offset;
-        }
-
-        return false;
-    }
-
-    /**
-     * @param mixed $offset
-     * @param mixed $value
-     */
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->_set($value);
-        } else {
-            $this->_set(array($offset => $value));
-        }
-    }
-
-    /**
-     * @param mixed $offset
-     */
-    public function offsetUnset($offset)
-    {
-        unset($this->$offset);
-    }
-
-    /**
-     * @return int
-     */
-    public function count()
-    {
-        return count((array) $this);
-    }
-}
 ?>
