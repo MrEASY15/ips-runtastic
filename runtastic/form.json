@@ -1,7 +1,7 @@
 {
 	"elements":
 	[
-		{ "type": "ValidationTextBox", "name": "user", "caption": "Benuter (eMail)" },
+		{ "type": "ValidationTextBox", "name": "usr", "caption": "Benuter (eMail)" },
 		{ "type": "PasswordTextBox", "name": "pwd", "caption": "Passwort" }
 		
 	],
