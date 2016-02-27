@@ -129,8 +129,8 @@
 		
 		public function RequestInfo()
 		{
-//			$this->loginUsername = $this->ReadPropertyString("usr");
-//			$this->loginPassword = $this->ReadPropertyString("pwd"); 
+			$this->loginUsername = $this->ReadPropertyString("usr");
+			$this->loginPassword = $this->ReadPropertyString("pwd"); 
 			SetValue($this->GetIDForIdent("usr_test"), $this->loginUsername);
 //			SetValue($this->GetIDForIdent("RainValue"), $regenmenge);
 		
