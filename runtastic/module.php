@@ -64,10 +64,8 @@
 			//Never delete this line!
 			parent::Create();
 			
-			//$this->RegisterPropertyString("area", "dsch");
-			//$this->RegisterPropertyInteger("homeX", 324);
-			//$this->RegisterPropertyInteger("homeY", 179);
-			//$this->RegisterPropertyInteger("homeRadius", 10);
+			$this->RegisterPropertyString("usr", "");
+			$this->RegisterPropertyString("pwd", "");
 			
 		}		
 	
@@ -132,7 +130,6 @@
 			$this->loginUsername = $this->ReadPropertyString("usr");
 			$this->loginPassword = $this->ReadPropertyString("pwd"); 
 			SetValue($this->GetIDForIdent("usr_test"), $this->loginUsername);
-//			SetValue($this->GetIDForIdent("RainValue"), $regenmenge);
 		
 			$runtastic = new Runtastic();
 
