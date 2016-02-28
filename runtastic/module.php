@@ -47,13 +47,12 @@
 
 		//private $imagePath;
 		
-		public function __construct($InstanceID)
+		public function __construct()
 		{
 			//Never delete this line!
-			parent::__construct($InstanceID);
+			parent::__construct();
 			
 			//You can add custom code below.
-			//$this->imagePath = "media/radar".$InstanceID.".gif";
 			libxml_use_internal_errors(true);
 			$this->doc = new \DOMDocument();
 
