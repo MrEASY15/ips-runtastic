@@ -43,7 +43,7 @@ namespace Runtastic;
 		private $doc;
 		private $loggedIn  = false;
 		private $timeout   = 10;
-		private $cookieJar = "/share/Web/runtastic/cookiejar";
+		private $cookieJar = "/usr/lib/symcon/modules/ips-runtastic/runtastic/cookiejar";
 
 		//private $imagePath;
 		
