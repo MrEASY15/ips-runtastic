@@ -133,7 +133,37 @@
 			$runtastic->login();
 			
 			$activities = $runtastic->getActivities();
+			
+			// ID & so
+			SetValue($this->GetIDForIdent("id"), $activities[0]->id);
+			SetValue($this->GetIDForIdent("type"), $activities[0]->type);
+			SetValue($this->GetIDForIdent("type_id"), $activities[0]->type_id);
+			SetValue($this->GetIDForIdent("duration"), $activities[0]->duration);
+			SetValue($this->GetIDForIdent("distance"), $activities[0]->distance);
+			SetValue($this->GetIDForIdent("pace"), $activities[0]->pace);
+			SetValue($this->GetIDForIdent("speed"), (float)$activities[0]->speed);
+			SetValue($this->GetIDForIdent("kcal"), $activities[0]->kcal);
+			SetValue($this->GetIDForIdent("heartrate_avg"), $activities[0]->heartrate_avg);
+			SetValue($this->GetIDForIdent("heartrate_max"), $activities[0]->heartrate_max);
+			SetValue($this->GetIDForIdent("elevation_gain"), $activities[0]->elevation_gain);
+			SetValue($this->GetIDForIdent("elevation_loss"), $activities[0]->elevation_loss);
+			SetValue($this->GetIDForIdent("surface"), $activities[0]->surface);
+			SetValue($this->GetIDForIdent("weather"), $activities[0]->weather);
+			SetValue($this->GetIDForIdent("feeling"), $activities[0]->feeling);
+			SetValue($this->GetIDForIdent("weather_id"), $activities[0]->weather_id);
+			SetValue($this->GetIDForIdent("feeling_id"), $activities[0]->feeling_id);
+			SetValue($this->GetIDForIdent("surface_id"), $activities[0]->surface_id);
+			SetValue($this->GetIDForIdent("notes"), $activities[0]->notes);
+			SetValue($this->GetIDForIdent("page_url"), $activities[0]->page_url);
+			SetValue($this->GetIDForIdent("map_url"), $activities[0]->map_url);
+			
+			// Datum und Uhrzeit
 			SetValue($this->GetIDForIdent("year"), $activities[0]->date->year);
+			SetValue($this->GetIDForIdent("month"), (int)$activities[0]->date->month);
+			SetValue($this->GetIDForIdent("day"), (int)$activities[0]->date->day);
+			SetValue($this->GetIDForIdent("hour"), $activities[0]->date->hour);
+			SetValue($this->GetIDForIdent("minutes"), $activities[0]->date->minutes);
+			SetValue($this->GetIDForIdent("secondes"), $activities[0]->date->secondes);
 			//echo "Gesamt: " . count($activities) . PHP_EOL;
 		
 			//echo "<pre>";
