@@ -163,7 +163,7 @@
 			SetValue($this->GetIDForIdent("day"), (int)$activities[0]->date->day);
 			SetValue($this->GetIDForIdent("hour"), $activities[0]->date->hour);
 			SetValue($this->GetIDForIdent("minutes"), $activities[0]->date->minutes);
-			SetValue($this->GetIDForIdent("secondes"), $activities[0]->date->secondes);
+			SetValue($this->GetIDForIdent("seconds"), $activities[0]->date->seconds);
 			//echo "Gesamt: " . count($activities) . PHP_EOL;
 		
 			//echo "<pre>";
