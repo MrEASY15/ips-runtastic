@@ -155,6 +155,7 @@
 			SetValue($this->GetIDForIdent("notes"), $activities[0]->notes);
 			SetValue($this->GetIDForIdent("page_url"), $activities[0]->page_url);
 			SetValue($this->GetIDForIdent("map_url"), $activities[0]->map_url);
+			SetValue($this->GetIDForIdent("create_route_url"), $activities[0]->create_route_url);
 			
 			// Datum und Uhrzeit
 			SetValue($this->GetIDForIdent("year"), $activities[0]->date->year);
