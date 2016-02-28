@@ -210,7 +210,7 @@
 		 * @param  int $timeout
 		 * @return Runtastic
 		 */
-		public function setTimeout($timeout)
+		private function setTimeout($timeout)
 		{
 			$this->timeout = $timeout;
 
@@ -223,7 +223,7 @@
 		 * @param  string $cookieJar
 		 * @return Runtastic
 		 */
-		public function setCookieJar($cookieJar)
+		private function setCookieJar($cookieJar)
 		{
 			$this->cookieJar = $cookieJar;
 
@@ -235,7 +235,7 @@
 		 *
 		 * @return string
 		 */
-		public function getUsername()
+		private function getUsername()
 		{
 			return $this->username;
 		}
@@ -245,7 +245,7 @@
 		 *
 		 * @return string
 		 */
-		public function getUid()
+		private function getUid()
 		{
 			return $this->uid;
 		}
@@ -255,7 +255,7 @@
 		 *
 		 * @return string
 		 */
-		public function getToken()
+		private function getToken()
 		{
 			return $this->token;
 		}
@@ -265,7 +265,7 @@
 		 *
 		 * @return array
 		 */
-		public function getRawData()
+		private function getRawData()
 		{
 			return $this->rawData;
 		}
@@ -275,7 +275,7 @@
 		 *
 		 * @return int|null
 		 */
-		public function getResponseStatusCode()
+		private function getResponseStatusCode()
 		{
 			if (isset($this->lastRequestInfo['http_code'])) {
 				return $this->lastRequestInfo['http_code'];
@@ -293,7 +293,7 @@
 		 * @param  string $response
 		 * @return void
 		 */
-		public function setDataFromResponse($response)
+		private function setDataFromResponse($response)
 		{
 			$this->doc->loadHTML($response);
 
@@ -332,7 +332,7 @@
 		 *
 		 * @return bool
 		 */
-		public function login()
+		private function login()
 		{
 			$this->loggedIn = false;
 
@@ -361,7 +361,7 @@
 		 *
 		 * @return void
 		 */
-		public function logout()
+		private function logout()
 		{
 			$this->get(self::RUNTASTIC_LOGOUT_URL);
 
@@ -386,7 +386,7 @@
 		 * @param  int|null $iYear  Number of the requested year.
 		 * @return bool|mixed
 		 */
-		public function getActivities($iWeek = null, $iMonth = null, $iYear = null)
+		private function getActivities($iWeek = null, $iMonth = null, $iYear = null)
 		{
 			$response = [];
 
@@ -528,7 +528,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function get($request, $parameters = [], $json = true)
+		private function get($request, $parameters = [], $json = true)
 		{
 			$requestUrl = $this->parseGet($request, $parameters);
 
@@ -543,7 +543,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function put($request, $parameters = [], $json = true)
+		private function put($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, 'PUT', $json);
 		}
@@ -556,7 +556,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function post($request, $parameters = [], $json = true)
+		private function post($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, null, $json);
 		}
@@ -569,7 +569,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function delete($request, $parameters = [], $json = true)
+		private function delete($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, 'DELETE', $json);
 		}
