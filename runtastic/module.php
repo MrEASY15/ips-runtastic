@@ -181,7 +181,7 @@
 		 */
 
 		 
-		private function setUsername($loginUsername)
+		public function setUsername($loginUsername)
 		{
 			$this->loginUsername = $loginUsername;
 
@@ -196,7 +196,7 @@
 		 */
 
 
-	     	private function setPassword($loginPassword)
+	     	public function setPassword($loginPassword)
 		{
 			$this->loginPassword = $loginPassword;
 
@@ -209,7 +209,7 @@
 		 * @param  int $timeout
 		 * @return Runtastic
 		 */
-		private function setTimeout($timeout)
+		public function setTimeout($timeout)
 		{
 			$this->timeout = $timeout;
 
@@ -222,7 +222,7 @@
 		 * @param  string $cookieJar
 		 * @return Runtastic
 		 */
-		private function setCookieJar($cookieJar)
+		public function setCookieJar($cookieJar)
 		{
 			$this->cookieJar = $cookieJar;
 
@@ -234,7 +234,7 @@
 		 *
 		 * @return string
 		 */
-		private function getUsername()
+		public function getUsername()
 		{
 			return $this->username;
 		}
@@ -244,7 +244,7 @@
 		 *
 		 * @return string
 		 */
-		private function getUid()
+		public function getUid()
 		{
 			return $this->uid;
 		}
@@ -254,7 +254,7 @@
 		 *
 		 * @return string
 		 */
-		private function getToken()
+		public function getToken()
 		{
 			return $this->token;
 		}
@@ -264,7 +264,7 @@
 		 *
 		 * @return array
 		 */
-		private function getRawData()
+		public function getRawData()
 		{
 			return $this->rawData;
 		}
@@ -274,7 +274,7 @@
 		 *
 		 * @return int|null
 		 */
-		private function getResponseStatusCode()
+		public function getResponseStatusCode()
 		{
 			if (isset($this->lastRequestInfo['http_code'])) {
 				return $this->lastRequestInfo['http_code'];
@@ -292,7 +292,7 @@
 		 * @param  string $response
 		 * @return void
 		 */
-		private function setDataFromResponse($response)
+		public function setDataFromResponse($response)
 		{
 			$this->doc->loadHTML($response);
 
@@ -331,7 +331,7 @@
 		 *
 		 * @return bool
 		 */
-		private function login()
+		public function login()
 		{
 			$this->loggedIn = false;
 
@@ -360,7 +360,7 @@
 		 *
 		 * @return void
 		 */
-		private function logout()
+		public function logout()
 		{
 			$this->get(self::RUNTASTIC_LOGOUT_URL);
 
@@ -385,7 +385,7 @@
 		 * @param  int|null $iYear  Number of the requested year.
 		 * @return bool|mixed
 		 */
-		private function getActivities($iWeek = null, $iMonth = null, $iYear = null)
+		public function getActivities($iWeek = null, $iMonth = null, $iYear = null)
 		{
 			$response = [];
 
@@ -452,7 +452,7 @@
 		 * @param  array  $query
 		 * @return string
 		 */
-		protected function parseGet($url, $query)
+		public function parseGet($url, $query)
 		{
 			if (!empty($query)) {
 				$append = strpos($url, '?') === false ? '?' : '&';
@@ -469,7 +469,7 @@
 		 * @param  string $response
 		 * @return object
 		 */
-		protected function parseResponse($response)
+		public function parseResponse($response)
 		{
 			return @json_decode($response, false, 512, JSON_BIGINT_AS_STRING);
 		}
@@ -483,7 +483,7 @@
 		 * @param  bool        $json
 		 * @return object|null
 		 */
-		protected function request($url, $parameters = [], $request = null, $json = true)
+		public function request($url, $parameters = [], $request = null, $json = true)
 		{
 			$this->lastRequest     = $url;
 			$this->lastRequestData = $parameters;
@@ -527,7 +527,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		private function get($request, $parameters = [], $json = true)
+		public function get($request, $parameters = [], $json = true)
 		{
 			$requestUrl = $this->parseGet($request, $parameters);
 
@@ -542,7 +542,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		private function put($request, $parameters = [], $json = true)
+		public function put($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, 'PUT', $json);
 		}
@@ -555,7 +555,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		private function post($request, $parameters = [], $json = true)
+		public function post($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, null, $json);
 		}
@@ -568,7 +568,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		private function delete($request, $parameters = [], $json = true)
+		protected function delete($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, 'DELETE', $json);
 		}
