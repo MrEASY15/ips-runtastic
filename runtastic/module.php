@@ -47,10 +47,10 @@
 
 		//private $imagePath;
 		
-		public function __construct()
+		public function __construct($InstanceID)
 		{
 			//Never delete this line!
-			parent::__construct();
+			parent::__construct($InstanceID);
 			
 			//You can add custom code below.
 			libxml_use_internal_errors(true);
