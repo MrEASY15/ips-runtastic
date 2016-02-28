@@ -1,5 +1,5 @@
 <?
-//namespace Runtastic;
+namespace Runtastic;
 
 	class Runtastic extends IPSModule
 	{
