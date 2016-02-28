@@ -133,7 +133,7 @@
 			$runtastic->login();
 			
 			$activities = $runtastic->getActivities();
-			SetValue($this->GetIDForIdent("year", $activities[0]->date->year);
+			SetValue($this->GetIDForIdent("year"), $activities[0]->date->year);
 			//echo "Gesamt: " . count($activities) . PHP_EOL;
 		
 			//echo "<pre>";
