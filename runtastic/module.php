@@ -109,9 +109,6 @@
 			$this->RegisterVariableFloat("elevation_gain", "Maximaler Höhenunterschied");
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied");
 
-			// TestVariable
-			$this->RegisterVariableString("usr_test", "usr_test");
-			
 		}
 	
 		/**
@@ -129,7 +126,6 @@
 		{
 			$this->loginUsername = $this->ReadPropertyString("usr");
 			$this->loginPassword = $this->ReadPropertyString("pwd"); 
-			SetValue($this->GetIDForIdent("usr_test"), $this->loginUsername);
 		
 			$runtastic = new Runtastic();
 
@@ -137,13 +133,14 @@
 			$runtastic->login();
 			
 			$activities = $runtastic->getActivities();
-			echo "Gesamt: " . count($activities) . PHP_EOL;
+			SetValue($this->GetIDForIdent("year", $activities[0]->date->year);
+			//echo "Gesamt: " . count($activities) . PHP_EOL;
 		
-			echo "<pre>";
-			var_dump($activities[0]);
-			echo "</pre>";
+			//echo "<pre>";
+			//var_dump($activities[0]);
+			//echo "</pre>";
 
-			echo "Horst";
+			
 
 		}
 		
