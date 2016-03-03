@@ -29,6 +29,8 @@
 			// Eigene Profile
 	        $this->RegisterProfileInteger("RUNT.bpm", "", "", " bpm", "", "", "", "");
 			$this->RegisterProfileInteger("RUNT.kcal", "", "", " kcal", "", "", "", "");
+			$this->RegisterProfileInteger("RUNT.ms", "", "", " ms", "", "", "", "");
+			$this->RegisterProfileInteger("RUNT.min", "", "", " min", "", "", "", "");
 			$this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", "", "", "", 2);
 			$this->RegisterProfileFloat("RUNT.m", "", "", " m", "", "", "", "");
 			$this->RegisterProfileFloat("RUNT.km", "", "", " km", "", "", "", 2);
@@ -37,7 +39,6 @@
 			// Integer
 			$this->RegisterVariableInteger("id", "Aktivitaets-ID");
 			$this->RegisterVariableInteger("type_id", "Aktivitaets-Typ-ID");
-			$this->RegisterVariableInteger("duration", "Dauer");
 			$this->RegisterVariableInteger("kcal", "kcal", "RUNT.kcal");
 			$this->RegisterVariableInteger("heartrate_avg", "Durchschnittspuls", "RUNT.bpm");
 			$this->RegisterVariableInteger("heartrate_max", "Maximalpuls", "RUNT.bpm");
@@ -50,7 +51,9 @@
 			$this->RegisterVariableInteger("hour", "Stunde");
 			$this->RegisterVariableInteger("minutes", "Minute");
 			$this->RegisterVariableInteger("seconds", "Sekunde");
-			
+			$this->RegisterVariableInteger("duration_ms", "Dauer", "RUNT.ms");
+			$this->RegisterVariableInteger("duration_min", "Dauer", "RUNT.min");
+
 			
 			// Strings
 			$this->RegisterVariableString("type", "Aktivitaets-Typ");
@@ -68,7 +71,7 @@
 			$this->RegisterVariableFloat("speed", "Geschwindigkeit", "WindSpeed.kmh"); // kommt als String
 			$this->RegisterVariableFloat("elevation_gain", "Maximaler Höhenunterschied", "RUNT.m");
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied", "RUNT.m");
-
+			
 			// Eigene Scripte
 			$sid = $this->RegisterScript("RuntasticdatenAbrufen", "Runtasticdaten abrufen", 
 			'<?
@@ -104,7 +107,8 @@
 			SetValue($this->GetIDForIdent("id"), $activities[0]->id);
 			SetValue($this->GetIDForIdent("type"), $activities[0]->type);
 			SetValue($this->GetIDForIdent("type_id"), $activities[0]->type_id);
-			SetValue($this->GetIDForIdent("duration"), $activities[0]->duration);
+			SetValue($this->GetIDForIdent("duration_min"), ($activities[0]->duration)/60000);
+			SetValue($this->GetIDForIdent("duration_ms"), $activities[0]->duration);
 			SetValue($this->GetIDForIdent("distance"), ((float)$activities[0]->distance)/1000.0);
 			SetValue($this->GetIDForIdent("pace"), $activities[0]->pace);
 			SetValue($this->GetIDForIdent("speed"), (float)$activities[0]->speed);
