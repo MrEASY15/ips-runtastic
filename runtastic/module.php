@@ -27,9 +27,8 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-	     //   $this->RegisterProfileInteger("RUNT.pace", "", "", " %", 0, 10, 2);
-        $this->RegisterProfileInteger("Intensity.Squeezebox", "Intensity", "", " %", 0, 100, 1);
-
+	        $this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", , , 2);
+        
 			
 			// Integer
 			$this->RegisterVariableInteger("id", "Aktivitaets-ID");
@@ -136,6 +135,40 @@
 
 			
 
+		}
+
+	    protected function RegisterProfileInteger($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize)
+		{
+			if (!IPS_VariableProfileExists($Name))
+			{
+				IPS_CreateVariableProfile($Name, 1);
+			}
+			else
+			{
+				$profile = IPS_GetVariableProfile($Name);
+				if ($profile['ProfileType'] != 1)
+					throw new Exception("Variable profile type does not match for profile " . $Name);
+			}
+			IPS_SetVariableProfileIcon($Name, $Icon);
+			IPS_SetVariableProfileText($Name, $Prefix, $Suffix);
+			IPS_SetVariableProfileValues($Name, $MinValue, $MaxValue, $StepSize);
+		}
+
+	    protected function RegisterProfileFloat($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize)
+		{
+			if (!IPS_VariableProfileExists($Name))
+			{
+				IPS_CreateVariableProfile($Name, 2);
+			}
+			else
+			{
+				$profile = IPS_GetVariableProfile($Name);
+				if ($profile['ProfileType'] != 2)
+					throw new Exception("Variable profile type does not match for profile " . $Name);
+			}
+			IPS_SetVariableProfileIcon($Name, $Icon);
+			IPS_SetVariableProfileText($Name, $Prefix, $Suffix);
+			IPS_SetVariableProfileValues($Name, $MinValue, $MaxValue, $StepSize);
 		}
 
 	}
