@@ -61,6 +61,15 @@
 			$this->RegisterVariableFloat("elevation_gain", "Maximaler Höhenunterschied");
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied");
 
+			// Eigene Scripte
+			$sid = $this->RegisterScript("RuntasticdatenAbrufen", "Runtasticdaten abrufen", 
+			'<?
+				RUNT_RequestInfo($this->InstanceID);
+			?>'
+			, -8);
+
+			IPS_SetHidden($sid, true);
+    
 		}
 	
 		/**
