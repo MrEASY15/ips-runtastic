@@ -172,7 +172,15 @@
 		private $timeout   = 10;
 		private $cookieJar = "cookiejar";// /usr/lib/symcon/modules/ips-runtastic/runtastic/cookiejar";
 
-		//private $imagePath;
+		/**
+		 * Runtastic constructor.
+		 */
+		public function __construct()
+		{
+			libxml_use_internal_errors(true);
+			$this->doc = new \DOMDocument();
+		}
+	
 		
 		
 		/**
