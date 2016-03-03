@@ -107,10 +107,10 @@
 			
 			$activities = $runtastic->getActivities();
 			
+			// neue Daten abrufen, nur eintragen, wenn neue ID
 			if (GetValue($this->GetIDForIdent("id")) <> $activities[0]->id)
 			{
 				SetValue($this->GetIDForIdent("ndr"), true);
-			}
 			
 			// ID & so
 			SetValue($this->GetIDForIdent("id"), $activities[0]->id);
@@ -144,13 +144,8 @@
 			SetValue($this->GetIDForIdent("hour"), $activities[0]->date->hour);
 			SetValue($this->GetIDForIdent("minutes"), $activities[0]->date->minutes);
 			SetValue($this->GetIDForIdent("seconds"), $activities[0]->date->seconds);
-			//echo "Gesamt: " . count($activities) . PHP_EOL;
-		
-			//echo "<pre>";
-			//var_dump($activities[0]);
-			//echo "</pre>";
-
 			
+			}
 
 		}
 
