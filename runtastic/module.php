@@ -27,11 +27,11 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-	        $this->RegisterProfileInteger("RUNT.bpm", "", "", " bpm", "", "", "");
-			$this->RegisterProfileInteger("RUNT.kcal", "", "", " kcal", "", "", "");
-			$this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", "", "", 2);
-			$this->RegisterProfileFloat("RUNT.m", "", "", " m", "", "", "");
-			$this->RegisterProfileFloat("RUNT.km", "", "", " km", "", "", 2);
+	        $this->RegisterProfileInteger("RUNT.bpm", "", "", " bpm", "", "", "", "");
+			$this->RegisterProfileInteger("RUNT.kcal", "", "", " kcal", "", "", "", "");
+			$this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", "", "", "", 2);
+			$this->RegisterProfileFloat("RUNT.m", "", "", " m", "", "", "", "");
+			$this->RegisterProfileFloat("RUNT.km", "", "", " km", "", "", "", 2);
 			
 			
 			// Integer
@@ -141,7 +141,7 @@
 
 		}
 
-	    protected function RegisterProfileInteger($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize)
+	    protected function RegisterProfileInteger($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
 		{
 			if (!IPS_VariableProfileExists($Name))
 			{
@@ -156,9 +156,10 @@
 			IPS_SetVariableProfileIcon($Name, $Icon);
 			IPS_SetVariableProfileText($Name, $Prefix, $Suffix);
 			IPS_SetVariableProfileValues($Name, $MinValue, $MaxValue, $StepSize);
+			IPS_SetVariableProfileDigits($Name, $Digits);
 		}
 
-	    protected function RegisterProfileFloat($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize)
+	    protected function RegisterProfileFloat($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
 		{
 			if (!IPS_VariableProfileExists($Name))
 			{
@@ -173,6 +174,7 @@
 			IPS_SetVariableProfileIcon($Name, $Icon);
 			IPS_SetVariableProfileText($Name, $Prefix, $Suffix);
 			IPS_SetVariableProfileValues($Name, $MinValue, $MaxValue, $StepSize);
+			IPS_SetVariableProfileDigits($Name, $Digits);
 		}
 
 	}
