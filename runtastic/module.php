@@ -191,7 +191,7 @@
 		 */
 
 		 
-		protected function setUsername($loginUsername)
+		public function setUsername($loginUsername)
 		{
 			$this->loginUsername = $loginUsername;
 
@@ -206,7 +206,7 @@
 		 */
 
 
-	    protected function setPassword($loginPassword)
+	    public function setPassword($loginPassword)
 		{
 			$this->loginPassword = $loginPassword;
 
@@ -219,7 +219,7 @@
 		 * @param  int $timeout
 		 * @return Runtastic
 		 */
-		protected function setTimeout($timeout)
+		public function setTimeout($timeout)
 		{
 			$this->timeout = $timeout;
 
@@ -232,7 +232,7 @@
 		 * @param  string $cookieJar
 		 * @return Runtastic
 		 */
-		protected function setCookieJar($cookieJar)
+		public function setCookieJar($cookieJar)
 		{
 			$this->cookieJar = $cookieJar;
 
@@ -341,7 +341,7 @@
 		 *
 		 * @return bool
 		 */
-		protected function login()
+		public function login()
 		{
 			$this->loggedIn = false;
 
@@ -395,7 +395,7 @@
 		 * @param  int|null $iYear  Number of the requested year.
 		 * @return bool|mixed
 		 */
-		protected function getActivities($iWeek = null, $iMonth = null, $iYear = null)
+		public function getActivities($iWeek = null, $iMonth = null, $iYear = null)
 		{
 			$response = [];
 
