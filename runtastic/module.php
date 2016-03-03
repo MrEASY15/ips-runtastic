@@ -51,8 +51,8 @@
 			$this->RegisterVariableInteger("hour", "Stunde");
 			$this->RegisterVariableInteger("minutes", "Minute");
 			$this->RegisterVariableInteger("seconds", "Sekunde");
-			$this->RegisterVariableInteger("duration_ms", "Dauer", "RUNT.ms");
-			$this->RegisterVariableInteger("duration_min", "Dauer", "RUNT.min");
+			$this->RegisterVariableInteger("duration_ms", "Dauer ms", "RUNT.ms");
+			$this->RegisterVariableInteger("duration_min", "Dauer min", "RUNT.min");
 
 			
 			// Strings
@@ -71,6 +71,10 @@
 			$this->RegisterVariableFloat("speed", "Geschwindigkeit", "WindSpeed.kmh"); // kommt als String
 			$this->RegisterVariableFloat("elevation_gain", "Maximaler Höhenunterschied", "RUNT.m");
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied", "RUNT.m");
+			
+			// Bool
+			$this->RegisterVariableBool("ndr", "Neue Daten empfangen");
+			
 			
 			// Eigene Scripte
 			$sid = $this->RegisterScript("RuntasticdatenAbrufen", "Runtasticdaten abrufen", 
@@ -102,6 +106,11 @@
 			$runtastic->login();
 			
 			$activities = $runtastic->getActivities();
+			
+			if (GetValue($this->GetIDForIdent("id")) == $activities[0]->id)
+			{
+				SetValue($this->GetIDForIdent("ndr"), true);
+			}
 			
 			// ID & so
 			SetValue($this->GetIDForIdent("id"), $activities[0]->id);
