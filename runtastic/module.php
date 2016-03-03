@@ -107,7 +107,7 @@
 			
 			$activities = $runtastic->getActivities();
 			
-			if (GetValue($this->GetIDForIdent("id")) == $activities[0]->id)
+			if (GetValue($this->GetIDForIdent("id")) <> $activities[0]->id)
 			{
 				SetValue($this->GetIDForIdent("ndr"), true);
 			}
