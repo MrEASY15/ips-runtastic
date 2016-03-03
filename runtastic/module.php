@@ -26,6 +26,10 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 			
+			// Eigene Profile
+	        $this->RegisterProfileFloat("RUNT.pace", "Motion", "", " min/km", "", "", 2);
+        
+			
 			// Integer
 			$this->RegisterVariableInteger("id", "Aktivitaets-ID");
 			$this->RegisterVariableInteger("type_id", "Aktivitaets-Typ-ID");
@@ -56,7 +60,7 @@
 			$this->RegisterVariableString("map_url", "map_url");
 			
 			// Floats
-			$this->RegisterVariableFloat("pace", "Aktivitaets-Pace");
+			$this->RegisterVariableFloat("pace", "Aktivitaets-Pace", "RUNT.pace");
 			$this->RegisterVariableFloat("speed", "Geschwindigkeit"); // kommt als String
 			$this->RegisterVariableFloat("elevation_gain", "Maximaler Höhenunterschied");
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied");
@@ -64,7 +68,7 @@
 			// Eigene Scripte
 			$sid = $this->RegisterScript("RuntasticdatenAbrufen", "Runtasticdaten abrufen", 
 			'<?
-				RUNT_RequestInfo(' . $this->InstanceID . ',);
+				RUNT_RequestInfo(' . $this->InstanceID . ');
 			?>'
 			, -8);
 
