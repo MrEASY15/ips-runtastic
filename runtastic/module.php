@@ -27,8 +27,9 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-	        $this->RegisterProfileInteger("RUNT.pace", "", "", " %", 0, 10, 2);
-        
+	     //   $this->RegisterProfileInteger("RUNT.pace", "", "", " %", 0, 10, 2);
+        $this->RegisterProfileInteger("Intensity.Squeezebox", "Intensity", "", " %", 0, 100, 1);
+
 			
 			// Integer
 			$this->RegisterVariableInteger("id", "Aktivitaets-ID");
