@@ -27,7 +27,7 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-	        $this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", , , 2);
+	        $this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", "", "", 2);
         
 			
 			// Integer
