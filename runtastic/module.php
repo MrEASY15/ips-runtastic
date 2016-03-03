@@ -27,7 +27,7 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-	        $this->RegisterProfileFloat("RUNT.pace", "", "", " %", 0, 10, 2);
+	        $this->RegisterProfileInteger("RUNT.pace", "", "", " %", 0, 10, 2);
         
 			
 			// Integer
