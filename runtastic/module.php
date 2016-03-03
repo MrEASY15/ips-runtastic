@@ -175,7 +175,7 @@
 		/**
 		 * Runtastic constructor.
 		 */
-		protected function __construct()
+		public function __construct()
 		{
 			libxml_use_internal_errors(true);
 			$this->doc = new \DOMDocument();
