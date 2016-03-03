@@ -27,7 +27,7 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-//	        $this->RegisterProfileFloat("RUNT.pace", "", "", " %", 0, 10, 2);
+	        $this->RegisterProfileFloat("RUNT.pace", "", "", " %", 0, 10, 2);
         
 			
 			// Integer
@@ -60,7 +60,7 @@
 			$this->RegisterVariableString("map_url", "map_url");
 			
 			// Floats
-			$this->RegisterVariableFloat("pace", "Aktivitaets-Pace");//, "RUNT.pace");
+			$this->RegisterVariableFloat("pace", "Aktivitaets-Pace", "RUNT.pace");
 			$this->RegisterVariableFloat("speed", "Geschwindigkeit", "WindSpeed.kmh"); // kommt als String
 			$this->RegisterVariableFloat("elevation_gain", "Maximaler Höhenunterschied");
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied");
