@@ -175,7 +175,7 @@
 		/**
 		 * Runtastic constructor.
 		 */
-		public function __construct()
+		protected function __construct()
 		{
 			libxml_use_internal_errors(true);
 			$this->doc = new \DOMDocument();
@@ -191,7 +191,7 @@
 		 */
 
 		 
-		public function setUsername($loginUsername)
+		protected function setUsername($loginUsername)
 		{
 			$this->loginUsername = $loginUsername;
 
@@ -206,7 +206,7 @@
 		 */
 
 
-	     	public function setPassword($loginPassword)
+	    protected function setPassword($loginPassword)
 		{
 			$this->loginPassword = $loginPassword;
 
@@ -219,7 +219,7 @@
 		 * @param  int $timeout
 		 * @return Runtastic
 		 */
-		public function setTimeout($timeout)
+		protected function setTimeout($timeout)
 		{
 			$this->timeout = $timeout;
 
@@ -232,7 +232,7 @@
 		 * @param  string $cookieJar
 		 * @return Runtastic
 		 */
-		public function setCookieJar($cookieJar)
+		protected function setCookieJar($cookieJar)
 		{
 			$this->cookieJar = $cookieJar;
 
@@ -244,7 +244,7 @@
 		 *
 		 * @return string
 		 */
-		public function getUsername()
+		protected function getUsername()
 		{
 			return $this->username;
 		}
@@ -254,7 +254,7 @@
 		 *
 		 * @return string
 		 */
-		public function getUid()
+		protected function getUid()
 		{
 			return $this->uid;
 		}
@@ -264,7 +264,7 @@
 		 *
 		 * @return string
 		 */
-		public function getToken()
+		protected function getToken()
 		{
 			return $this->token;
 		}
@@ -274,7 +274,7 @@
 		 *
 		 * @return array
 		 */
-		public function getRawData()
+		protected function getRawData()
 		{
 			return $this->rawData;
 		}
@@ -284,7 +284,7 @@
 		 *
 		 * @return int|null
 		 */
-		public function getResponseStatusCode()
+		protected function getResponseStatusCode()
 		{
 			if (isset($this->lastRequestInfo['http_code'])) {
 				return $this->lastRequestInfo['http_code'];
@@ -302,7 +302,7 @@
 		 * @param  string $response
 		 * @return void
 		 */
-		public function setDataFromResponse($response)
+		protected function setDataFromResponse($response)
 		{
 			$this->doc->loadHTML($response);
 
@@ -341,7 +341,7 @@
 		 *
 		 * @return bool
 		 */
-		public function login()
+		protected function login()
 		{
 			$this->loggedIn = false;
 
@@ -370,7 +370,7 @@
 		 *
 		 * @return void
 		 */
-		public function logout()
+		protected function logout()
 		{
 			$this->get(self::RUNTASTIC_LOGOUT_URL);
 
@@ -395,7 +395,7 @@
 		 * @param  int|null $iYear  Number of the requested year.
 		 * @return bool|mixed
 		 */
-		public function getActivities($iWeek = null, $iMonth = null, $iYear = null)
+		protected function getActivities($iWeek = null, $iMonth = null, $iYear = null)
 		{
 			$response = [];
 
@@ -462,7 +462,7 @@
 		 * @param  array  $query
 		 * @return string
 		 */
-		public function parseGet($url, $query)
+		protected function parseGet($url, $query)
 		{
 			if (!empty($query)) {
 				$append = strpos($url, '?') === false ? '?' : '&';
@@ -479,7 +479,7 @@
 		 * @param  string $response
 		 * @return object
 		 */
-		public function parseResponse($response)
+		protected function parseResponse($response)
 		{
 			return @json_decode($response, false, 512, JSON_BIGINT_AS_STRING);
 		}
@@ -493,7 +493,7 @@
 		 * @param  bool        $json
 		 * @return object|null
 		 */
-		public function request($url, $parameters = [], $request = null, $json = true)
+		protected function request($url, $parameters = [], $request = null, $json = true)
 		{
 			$this->lastRequest     = $url;
 			$this->lastRequestData = $parameters;
@@ -537,7 +537,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function get($request, $parameters = [], $json = true)
+		protected function get($request, $parameters = [], $json = true)
 		{
 			$requestUrl = $this->parseGet($request, $parameters);
 
@@ -552,7 +552,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function put($request, $parameters = [], $json = true)
+		protected function put($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, 'PUT', $json);
 		}
@@ -565,7 +565,7 @@
 		 * @param  bool   $json
 		 * @return string
 		 */
-		public function post($request, $parameters = [], $json = true)
+		protected function post($request, $parameters = [], $json = true)
 		{
 			return $this->request($request, $parameters, null, $json);
 		}
