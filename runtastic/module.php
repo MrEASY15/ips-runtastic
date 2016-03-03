@@ -64,12 +64,11 @@
 			// Eigene Scripte
 			$sid = $this->RegisterScript("RuntasticdatenAbrufen", "Runtasticdaten abrufen", 
 			'<?
-				RUNT_RequestInfo($this->InstanceID);
+				RUNT_RequestInfo(' . $this->InstanceID . ',);
 			?>'
 			, -8);
 
-			IPS_SetHidden($sid, true);
-    
+   
 		}
 	
 		/**
