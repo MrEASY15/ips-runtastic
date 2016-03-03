@@ -73,7 +73,7 @@
 			$this->RegisterVariableFloat("elevation_loss", "Höhenunterschied", "RUNT.m");
 			
 			// Bool
-			$this->RegisterVariableBool("ndr", "Neue Daten empfangen");
+			$this->RegisterVariableBoolean("ndr", "Neue Daten empfangen");
 			
 			
 			// Eigene Scripte
