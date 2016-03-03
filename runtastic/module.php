@@ -1,60 +1,13 @@
 <?
 //namespace Runtastic;
-
 	class Runtastic extends IPSModule
 	{
-	    /**
-		 * HTTP Responses
-		 */
-		const HTTP_OK   = 200;
-
-		/**
-		 * Runtastic API Urls
-		 */
-		const RUNTASTIC_LOGIN_URL           = "https://www.runtastic.com/en/d/users/sign_in.json";
-		const RUNTASTIC_LOGOUT_URL          = "https://www.runtastic.com/en/d/users/sign_out";
-		const RUNTASTIC_SESSIONS_URL        = "https://www.runtastic.com/api/run_sessions/json";
-		const RUNTASTIC_SPORT_SESSIONS_URL  = "https://www.runtastic.com/en/users/%s/sport-sessions";
-
-		/**
-		 * Runtastic Credentials
-		 */
-		private $loginUsername;
-		private $loginPassword;
-
-		/**
-		 * Request Trace
-		 */
-		private $lastRequest;
-		private $lastRequestData;
-		private $lastRequestInfo;
-
-		/**
-		 * Runtastic User Data after login
-		 */
-		private $username;
-		private $uid;
-		private $token;
-		private $rawData;
-
-		/**
-		 * Other private variables
-		 */
-		private $doc;
-		private $loggedIn  = false;
-		private $timeout   = 10;
-		private $cookieJar = "cookiejar";// /usr/lib/symcon/modules/ips-runtastic/runtastic/cookiejar";
-
-		//private $imagePath;
-		
 		public function __construct($InstanceID)
 		{
 			//Never delete this line!
 			parent::__construct($InstanceID);
 			
 			//You can add custom code below.
-			libxml_use_internal_errors(true);
-			$this->doc = new \DOMDocument();
 
 		}
 		
@@ -117,16 +70,14 @@
 		* UWZ_RequestInfo($id);
 		*
 		*/
-		
-		
-		
+				
 		
 		public function RequestInfo()
 		{
 			$this->loginUsername = $this->ReadPropertyString("usr");
 			$this->loginPassword = $this->ReadPropertyString("pwd"); 
 		
-			$runtastic = new Runtastic();
+			$runtastic = new CL_Runtastic();
 
 			$runtastic->setUsername($this->loginUsername)->setPassword($this->loginPassword);
 			$runtastic->login();
@@ -173,6 +124,56 @@
 			
 
 		}
+
+	}
+	
+	
+	class CL_Runtastic
+	{
+	    /**
+		 * HTTP Responses
+		 */
+		const HTTP_OK   = 200;
+
+		/**
+		 * Runtastic API Urls
+		 */
+		const RUNTASTIC_LOGIN_URL           = "https://www.runtastic.com/en/d/users/sign_in.json";
+		const RUNTASTIC_LOGOUT_URL          = "https://www.runtastic.com/en/d/users/sign_out";
+		const RUNTASTIC_SESSIONS_URL        = "https://www.runtastic.com/api/run_sessions/json";
+		const RUNTASTIC_SPORT_SESSIONS_URL  = "https://www.runtastic.com/en/users/%s/sport-sessions";
+
+		/**
+		 * Runtastic Credentials
+		 */
+		private $loginUsername;
+		private $loginPassword;
+
+		/**
+		 * Request Trace
+		 */
+		private $lastRequest;
+		private $lastRequestData;
+		private $lastRequestInfo;
+
+		/**
+		 * Runtastic User Data after login
+		 */
+		private $username;
+		private $uid;
+		private $token;
+		private $rawData;
+
+		/**
+		 * Other private variables
+		 */
+		private $doc;
+		private $loggedIn  = false;
+		private $timeout   = 10;
+		private $cookieJar = "cookiejar";// /usr/lib/symcon/modules/ips-runtastic/runtastic/cookiejar";
+
+		//private $imagePath;
+		
 		
 		/**
 		 * Set Login Username.
