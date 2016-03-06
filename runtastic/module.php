@@ -133,9 +133,9 @@
 			SetValue($this->GetIDForIdent("feeling_id"), $activities[0]->feeling_id);
 			SetValue($this->GetIDForIdent("surface_id"), $activities[0]->surface_id);
 			SetValue($this->GetIDForIdent("notes"), $activities[0]->notes);
-			SetValue($this->GetIDForIdent("page_url"), "http://www.runtastic.com/" . $activities[0]->page_url);
-			SetValue($this->GetIDForIdent("map_url"), "http://www.runtastic.com/" . $activities[0]->map_url);
-			SetValue($this->GetIDForIdent("create_route_url"), "http://www.runtastic.com/" . $activities[0]->create_route_url);
+			SetValue($this->GetIDForIdent("page_url"), "http://www.runtastic.com" . $activities[0]->page_url);
+			SetValue($this->GetIDForIdent("map_url"), "http://www.runtastic.com" . $activities[0]->map_url);
+			SetValue($this->GetIDForIdent("create_route_url"), "http://www.runtastic.com" . $activities[0]->create_route_url);
 			
 			// Datum und Uhrzeit
 			SetValue($this->GetIDForIdent("year"), $activities[0]->date->year);
