@@ -149,7 +149,7 @@
 
 		}
 
-	    protected function RegisterProfileInteger($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
+	    protected function RegisterProfileInteger(string $Name, string $Icon, string $Prefix, string $Suffix, float $MinValue, float $MaxValue, float $StepSize, integer $Digits)
 		{
 			if (!IPS_VariableProfileExists($Name))
 			{
@@ -167,7 +167,7 @@
 			IPS_SetVariableProfileDigits($Name, $Digits);
 		}
 
-	    protected function RegisterProfileFloat($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
+	    protected function RegisterProfileFloat(string $Name, string $Icon, string $Prefix, string $Suffix, float $MinValue, float $MaxValue, float $StepSize, integer $Digits);//$Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
 		{
 			if (!IPS_VariableProfileExists($Name))
 			{
