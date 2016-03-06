@@ -27,10 +27,10 @@
 			parent::ApplyChanges();
 			
 			// Eigene Profile
-	        	$this->RegisterProfileInteger("RUNT.bpm", "", "", " bpm", "", "", "", "");
-			$this->RegisterProfileInteger("RUNT.kcal", "", "", " kcal", "", "", "", "");
-			$this->RegisterProfileInteger("RUNT.ms", "", "", " ms", "", "", "", "");
-			$this->RegisterProfileInteger("RUNT.min", "", "", " min", "", "", "", "");
+	        	$this->RegisterProfileInteger("RUNT.bpm", "", "", " bpm", NULL, NULL, NULL, NULL);
+			$this->RegisterProfileInteger("RUNT.kcal", "", "", " kcal", NULL, NULL, NULL, NULL);
+			$this->RegisterProfileInteger("RUNT.ms", "", "", " ms", NULL, NULL, NULL, NULL);
+			$this->RegisterProfileInteger("RUNT.min", "", "", " min", NULL, NULL, NULL, NULL);
 			$this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", NULL, NULL, NULL, 2);
 			$this->RegisterProfileFloat("RUNT.m", "", "", " m", NULL, NULL, NULL, NULL);
 			$this->RegisterProfileFloat("RUNT.km", "", "", " km", NULL, NULL, NULL, 2);
@@ -133,9 +133,9 @@
 			SetValue($this->GetIDForIdent("feeling_id"), $activities[0]->feeling_id);
 			SetValue($this->GetIDForIdent("surface_id"), $activities[0]->surface_id);
 			SetValue($this->GetIDForIdent("notes"), $activities[0]->notes);
-			SetValue($this->GetIDForIdent("page_url"), $activities[0]->page_url);
-			SetValue($this->GetIDForIdent("map_url"), $activities[0]->map_url);
-			SetValue($this->GetIDForIdent("create_route_url"), $activities[0]->create_route_url);
+			SetValue($this->GetIDForIdent("page_url"), "http://www.runtastic.com/" . $activities[0]->page_url);
+			SetValue($this->GetIDForIdent("map_url"), "http://www.runtastic.com/" . $activities[0]->map_url);
+			SetValue($this->GetIDForIdent("create_route_url"), "http://www.runtastic.com/" . $activities[0]->create_route_url);
 			
 			// Datum und Uhrzeit
 			SetValue($this->GetIDForIdent("year"), $activities[0]->date->year);
