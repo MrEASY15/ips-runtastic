@@ -31,9 +31,9 @@
 			$this->RegisterProfileInteger("RUNT.kcal", "", "", " kcal", "", "", "", "");
 			$this->RegisterProfileInteger("RUNT.ms", "", "", " ms", "", "", "", "");
 			$this->RegisterProfileInteger("RUNT.min", "", "", " min", "", "", "", "");
-			$this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", "", "", "", 2);
-			$this->RegisterProfileFloat("RUNT.m", "", "", " m", "", "", "", "");
-			$this->RegisterProfileFloat("RUNT.km", "", "", " km", "", "", "", 2);
+			$this->RegisterProfileFloat("RUNT.pace", "", "", " min/km", NULL, NULL, NULL, 2);
+			$this->RegisterProfileFloat("RUNT.m", "", "", " m", NULL, NULL, NULL, NULL);
+			$this->RegisterProfileFloat("RUNT.km", "", "", " km", NULL, NULL, NULL, 2);
 			
 			
 			// Integer
